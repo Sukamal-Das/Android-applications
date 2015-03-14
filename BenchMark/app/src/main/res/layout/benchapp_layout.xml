@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:id="@+id/lin"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/etArraySize"
+        android:layout_gravity="center_horizontal"
+        android:hint="Enter Size Of Array"
+        android:textColorHint="#ff45ff00"
+        android:textColor="#ff45ff00" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Array Status"
+        android:id="@+id/tvStatus"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff000bcb"
+        android:textSize="20dp" />
+
+    <RadioGroup
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/rgCase">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Best Case"
+            android:id="@+id/rdBest"
+            android:gravity="left"
+
+            android:textColor="#ff000bcb"
+            android:checked="false"
+            android:textSize="20dp" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average Case"
+            android:id="@+id/rdAverage"
+            android:gravity="left"
+            android:textColor="#ff000bcb"
+            android:textSize="20dp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Worst Case"
+            android:id="@+id/rdWorst"
+            android:gravity="left"
+            android:textColor="#ff000bcb"
+            android:textSize="20dp" />
+
+
+    </RadioGroup>
+
+    <ImageButton
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:id="@+id/btnGenerate"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn1"
+        android:onClick="generate"
+        android:clickable="true" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Sorting Algorithm"
+            android:id="@+id/tvAlgo"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:textColor="#ff000bcb"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Taken"
+            android:id="@+id/tvTime"
+            android:layout_row="0"
+            android:layout_column="12"
+            android:textSize="20dp"
+            android:textColor="#ff000bcb" />
+
+    </GridLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/rel">
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnIns"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/insbtn"
+            android:layout_alignRight="@+id/btnSel"
+            android:onClick="sortIt" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnSel"
+            android:background="@drawable/selbtn"
+            android:layout_below="@+id/btnIns"
+            android:layout_toLeftOf="@+id/btnAll"
+            android:layout_toStartOf="@+id/btnAll"
+            android:onClick="sortIt" />
+
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnBub"
+            android:background="@drawable/bubbtn"
+            android:layout_below="@+id/btnSel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/btnSel"
+            android:onClick="sortIt" />
+
+        <ImageButton
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:id="@+id/btnAll"
+            android:background="@drawable/bench"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="sortIt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Result"
+            android:id="@+id/tvIns"
+            android:textSize="25dp"
+            android:textColor="#ff58ff03"
+            android:layout_above="@+id/btnSel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Result"
+            android:id="@+id/tvSel"
+            android:textSize="25dp"
+            android:textColor="#ff58ff03"
+            android:layout_above="@+id/btnBub"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Result"
+            android:id="@+id/tvBub"
+            android:textSize="25dp"
+            android:textColor="#ff58ff03"
+            android:layout_alignBottom="@+id/btnBub"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+</LinearLayout>
